@@ -1,6 +1,13 @@
 pipeline{
 	agent any
 	stages{
+		stage('POM File'){
+			steps{
+				withMaven(maven : 'M2_HOME'){
+					sh 'mvn -f MavenRepo/jenkins_Pipeline_Maven clean install'
+				}
+			}
+		}
 		stage('Compile Stage'){
 			steps{
 				withMaven(maven : 'M2_HOME'){
