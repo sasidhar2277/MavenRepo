@@ -11,21 +11,21 @@ pipeline{
 		stage('Compile Stage'){
 			steps{
 				withMaven(maven : 'M2_HOME'){
-					sh 'mvn clean compile'
+					sh 'mvn -f MvnDemo/pom.xml clean compile'
 				}
 			}
 		}
 		stage('Testing Stage'){
 			steps{
 				withMaven(maven : 'M2_HOME'){
-					sh 'mvn test'
+					sh 'mvn -f MvnDemo/pom.xml test'
 				}
 			}
 		}
 		stage('Deployment Stage'){
 			steps{
 				withMaven(maven : 'M2_HOME'){
-					sh 'mvn deploy'
+					sh 'mvn -f MvnDemo/pom.xml deploy'
 				}
 			}
 		}
