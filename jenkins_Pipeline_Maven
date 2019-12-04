@@ -22,12 +22,5 @@ pipeline{
 				}
 			}
 		}
-		stage('Deployment Stage'){
-			steps{
-				withMaven(maven : 'M2_HOME'){
-					sh 'mvn -f MvnDemo/pom.xml deploy'
-				}
-			}
-		}
 	}
 }
