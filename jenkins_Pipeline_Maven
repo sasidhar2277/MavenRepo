@@ -4,7 +4,7 @@ pipeline{
 		stage('POM File'){
 			steps{
 				withMaven(maven : 'M2_HOME'){
-					sh 'mvn -f MavenRepo/jenkins_Pipeline_Maven clean install'
+					sh 'mvn -f MvnDemo/pom.xml clean install'
 				}
 			}
 		}
